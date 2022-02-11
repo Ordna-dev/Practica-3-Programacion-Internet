@@ -1,5 +1,5 @@
 <?php
-    //include ('conexion.php');
+    include ('conexion.php');
 
     if(count($_POST) > 0) {
         $tipo = $_POST['tipo'];

@@ -10,19 +10,7 @@
     </head>
     <body>
         <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $database = "practicaConexionBD";
-
-            try {
-                $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Conectado";
-            } catch(PDOException $e) {
-                echo "Conexion fallida: " . $e->getMessage();
-            }
+            include('conexion.php')
         ?>
         <h1>Formulario de trabajo</h1>
         <ul>
@@ -40,18 +28,7 @@
         </form>
 
         <?php
-            //include ('conexion.php');
-
-            if(count($_POST) > 0) {
-                $tipo = $_POST['tipo'];
-                $descripcion = $_POST['descripcion'];
-
-                $sql = "INSERT INTO trabajo (tipo, descripcion) VALUES ('$tipo', '$descripcion')";
-
-                $conn->exec($sql);
-
-                //header('Location: index.php');
-            }
+            include('store.php')
         ?>
     </body>
 </html>
