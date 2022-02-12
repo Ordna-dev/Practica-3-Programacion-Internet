@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php
-            include('conexion.php')
+            include('conexion.php');
         ?>
         <h1>Formulario de trabajo</h1>
         <ul>
@@ -28,7 +28,7 @@
         </form>
 
         <?php
-            include('store.php')
+            include('store.php');
         ?>
     </body>
 </html>
